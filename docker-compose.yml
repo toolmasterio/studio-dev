@@ -15,3 +15,14 @@ services:
     ports:
       - '13000:13000'
       - '13001:13001'
+
+  mysql:
+    image: mysql:9.0
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql/dev:/docker-entrypoint-initdb.d
+      - ./docker/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "local"
