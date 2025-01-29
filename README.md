@@ -9,7 +9,8 @@ This is the development repository for Toolmaster Studio.
 
 # Plugin development
 1. Add new folder with "@companyname" plugin to packages/plugins repository
-2. Add new folder with plugin inside of the folder
-3. Install plugin trough UI
+2. Add new folder with plugin inside the folder
+3. Make tar of plugin using ``yarn build @toolmaster/multitenant --tar``
+4. Install plugin trough UI
 
 # Resources
