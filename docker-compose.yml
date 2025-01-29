@@ -1,0 +1,17 @@
+services:
+  studio:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: [ "yarn", "dev" ]
+    working_dir: /app
+    env_file:
+      - .env
+    volumes:
+      - ./package.json:/app/package.json
+      - ./yarn.lock:/app/yarn.lock
+      - ./packages/:/app/packages/
+      - ./storage/:/app/storage/
+    ports:
+      - '13000:13000'
+      - '13001:13001'
